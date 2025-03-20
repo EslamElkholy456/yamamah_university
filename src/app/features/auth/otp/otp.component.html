@@ -1,0 +1,53 @@
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12 col-lg-8">
+            <div class="log-container">
+                <div class=" m-auto text-center">
+                    <h2>   ادخل رمز التأكيد </h2>
+                    <span>تم ارسال رمز التأكيد الى*********</span>
+                </div>
+
+               
+
+                <form [formGroup]="verfiyForm" (ngSubmit)="submitOtp()">
+                    <div class="mb-3 input-login d-flex flex-column">
+                        <label for="email">رمز التأكيد</label>
+                        <div class="d-flex gap-2 justify-content-between">
+                            <input formControlName="otpCode" type="text" placeholder="0000" class="otp-input form-control border-0 text-center">
+                        </div>
+                        <div class="mb-3 input-login d-flex flex-column">
+                            <label for="email">البريد الالكتروني</label>
+                            <input formControlName="email"  type="email"  id="email" placeholder="البريد الالكتروني">
+                          </div>
+                          <div class="mb-3 input-login d-flex flex-column">
+                            <label for="newPass">كلمة المرور الجديدة </label>
+                            <input formControlName="newPassword"  type="password"  id="newPass" placeholder="ادخل كلمة المرور الجديدة">
+                          </div>
+                      </div>
+                   
+
+                      <div class="btn-form mt-5 mb-3">
+                        <button class="border-0"> ارسال رمز التأكيد</button>
+                      </div>
+                </form>
+                <div class="">
+                    <a routerLink="/forgetpass" class="text-decoration-none">اعادة ارسال رمز التأكيد</a>
+                </div>
+                <div class=" d-flex justify-content-center mt-5">
+                    <span class="fw-bold me-2 text-secondary"> لدي حساب بالفعل، 
+                        <a routerLink="/login" class="a-color">
+                            تسجيل الدخول
+                        </a>
+                    </span>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+            <div class="log-img">
+                <img class="w-100" src="/imges/Rectangle otp.png" alt="img">
+            </div>
+
+        </div>
+    </div>
+</div>

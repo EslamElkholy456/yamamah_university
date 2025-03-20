@@ -1,1 +1,144 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .log-img{
+    
+    img{
+        border-radius: 20px;
+        height: 1184px;
+    }
+}
+.log-container{
+    height: 1184px;
+    background-color: #E7EDF7;
+    padding: 36px;
+    border-radius: 20px;
+
+    h2{
+        color: #233757;
+        font-size: 36px;
+        font-weight: 700;
+        
+    }
+}
+.account{
+    span{
+        color: #233757;
+        font-weight: 700;
+    }
+    button{
+        width: 223px;
+        padding: 16px;
+        border: 1px solid #233757;
+        margin: 16px;
+        border-radius: 10px;
+        color: #233757;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:active{
+            background-color: #233757;
+            color: white;
+        }
+
+        &:hover{
+            background-color: #233757;
+            color: white;
+        }
+    }
+    .role{
+        width: 223px;
+        padding: 16px;
+        border: 1px solid #233757;
+        margin: 16px;
+        border-radius: 10px;
+        color: #233757;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:active{
+            background-color: #233757;
+            color: white;
+        }
+
+        &:hover{
+            background-color: #233757;
+            color: white;
+        }
+    }
+}
+.input-login{
+    margin: 20px 0;
+    label{
+        color: #233757;
+        font-weight: 700;
+    }
+
+    input{
+        width: 787px;
+        border: 1px solid  #E7E7E7;
+        
+        padding: 16px;
+        border-radius: 10px;
+        margin: 10px 0;
+        outline: none;
+    }
+   
+
+}
+
+.name-input{
+    input{
+        width:365.5px !important;
+    }
+}
+.pass{
+    color: #888888;
+    a{
+        color: #888888;
+    }
+}
+.btn-form{
+    button{
+        width: 787px;
+        padding: 12px 16px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 6px 0px #0000004D;
+        background-color: #253F67;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 18px;
+
+    }
+}
+
+.drop-menu{
+    transform: translateX(50%);
+    z-index:10;
+    margin: 0 10px;
+}
+.btn-drop{
+    padding: 16px;
+        border-radius: 10px;
+        margin: 10px 0;
+        outline: none;
+}
+.input-drop{
+    width: 735px !important; 
+       
+}
+.input-drop-2{
+    width: 833px !important;
+}
+
+.a-color{
+    color:#253F67 !important;
+}
+.check{
+    width: 24px;
+}

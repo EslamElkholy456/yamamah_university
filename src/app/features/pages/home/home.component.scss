@@ -1,0 +1,118 @@
+.img-cover{
+    background-image: url('/imges/category_cover.png.png');
+    background-size: cover;
+    height: 530px;
+}
+h2{
+    font-weight: 700;
+    line-height: 36px;
+
+}
+
+.search-feild{
+    input{
+        width: 662px;
+    height: 68px;
+    border-radius: 38px;
+    outline: none;
+    padding: 10px;
+    }
+    button{
+        width: 90px;
+        height: 48px;
+        border-radius: 800px;
+        
+        background-color: #253F67;
+        color: white;
+        transform: translateX(120%);
+        
+    }
+}
+.section-two{
+    margin: 120px 0;
+}
+.first-card{
+    border-radius: 20px;
+    padding: 30px 36.8px;
+    box-shadow: 0px 3px 30px 0px #0000001A;
+    height: 240px;
+
+    span{
+        color: #253F67;
+    }
+
+    p{
+        color: #9BB7DE;
+    }
+    button{
+        width: 243px;
+        border-radius: 5px;
+        padding: 8px 67px;
+        background-color: #253F67;
+        color: white;
+        box-shadow: 0px 3px 6px 0px #40D57D4D;
+    }
+
+}
+
+.div-back{
+    width:100%;
+    height: 300px;
+    background-color: #253F67;
+    margin: 150px 0;
+}
+
+.video{
+    width: 1140px;
+    margin: auto;
+    img{
+
+        transform: translateY(-20%);
+
+    }
+}
+
+.joinUs{
+    width: 1140px;
+    margin: auto;
+    padding: 66px 25px;
+    background-color: #43D477;
+    border-radius: 15px;
+    transform: translateY(50%);
+
+    .title{
+        h3{
+            font-size: 26.5px;
+            font-weight: 700;
+            line-height: 36px;
+            color: white;
+        }
+        span{
+            line-height: 20px;
+            font-weight: 400;
+        }
+    }
+}
+
+.join-field{
+    
+    input{
+        width: 420px;
+    height: 68px;
+    border-radius: 38px;
+    outline: none;
+    padding: 10px;
+
+    }
+    button{
+        width: 109px;
+        height: 48px;
+        border-radius: 800px;
+        box-shadow: 0px 3px 6px 0px #40D57D4D;
+
+        background-color: #43D477;
+        color: white;
+        transform: translateX(120%);
+        
+    }
+}

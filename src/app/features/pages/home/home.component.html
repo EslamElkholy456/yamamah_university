@@ -1,0 +1,87 @@
+<section class="img-cover d-flex align-items-center justify-content-center">
+<div class=" text-center ">
+    <h2 class="fs-1 text-white ">الفصول الدراسية</h2>
+
+
+</div>
+
+</section>
+
+
+<section class="section-two">
+    <div class="container">
+        <div class="row d-flex justify-content-evenly g-3">
+            <div class="col-md-6 col-lg-3">
+                <div class="first-card d-flex align-items-center flex-column">
+                    <img src="/imges/home/Background2.png" alt="">
+                    <span class="fs-4 fw-bold">{{ orgCount.count }}</span>
+                    <div class="text-center">
+                        <h6 class="fs-6">عدد المحاضرين</h6>
+                    <p class="">تعلم بدون عوائق الوقت او المكان.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="first-card d-flex align-items-center flex-column">
+                    <img src="/imges/home/Background3.png" alt="">
+                    <span class="fs-4 fw-bold">{{ stdCount.count }}</span>
+                    <div class="text-center">
+                        <h6 class="fs-6">عدد الطلاب</h6>
+                    <p class="">تعلم بدون عوائق الوقت او المكان.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="first-card d-flex align-items-center flex-column">
+                    <img src="/imges/home/Background4.png" alt="">
+                    <span class="fs-4 fw-bold">{{ facCount.count }}</span>
+                    <div class="text-center">
+                        <h6 class="fs-6">حصص مباشرة</h6>
+                    <p class="">طور مهاراتك عن طريق أفضل طرق التعليم.</p>
+                    </div>
+                </div>
+            </div>
+            @if (userRole==="admin" ||userRole==="instructor") {
+                <div class="col-md-6 col-lg-3">
+                    <div class="first-card d-flex align-items-center flex-column">
+                        <img src="/imges/home/Background.png" alt="">
+                        
+                       
+                       
+                            <button routerLink="/creatCourse" class="my-5 ">انشاء كورس</button>
+                        
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>
+
+<app-courses></app-courses>
+
+<section>
+    <div class="div-back">
+        <div class="video">
+            <img class="w-100" src="/imges/home/Backgroundvideo.png" alt="imgback">
+        </div>
+    </div>
+
+   
+</section>
+
+<section>
+    <div class="joinUs">
+        <div class="d-flex justify-content-between">
+            <div class="title">
+                <h3>انضم إلينا اليوم</h3>
+                <span class="text-white-50">ستصلك احدث العروض والتخفيضات على الايميل.</span>
+
+            </div>
+            <div class="join-field">
+                <input class="border-0" type="email" placeholder="ادخل ايميلك هنا">
+                <button class="border-0">انضمام</button>
+            </div>
+        </div>
+    </div>
+</section>

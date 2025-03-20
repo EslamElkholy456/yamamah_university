@@ -1,0 +1,45 @@
+.container-details{
+    width: 1122px;
+    height: 800px;
+    background-color: #F4F6FB;
+    border-radius: 50px;
+}
+
+.cont-style{
+    width: 177px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 16px;
+    background-color: #F4F6FB;
+    overflow: hidden;
+    gap: 32px;
+   
+}
+.cont-style-2{
+    width: 177px;
+    height: 80px;
+    border-radius: 10px;
+    padding: 16px;
+    background-color: #CAD8ED;
+    overflow: hidden;
+    gap: 32px;
+    
+}
+i{
+    color: yellow;
+}
+
+span ,h2 ,p, h3{
+    color: #253F67;
+}
+button{
+    width: 1022px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px;
+    padding: 12px 16px;
+    box-shadow: 0px 3px 6px 0px #40D57D4D;
+    background-color: #253F67;
+    color: white;
+
+}

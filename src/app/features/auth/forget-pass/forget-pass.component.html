@@ -1,0 +1,39 @@
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12 col-lg-8">
+            <div class="log-container">
+                <div class=" m-auto text-center">
+                    <h2> نسيت كلمة المرور</h2>
+                </div>
+
+               
+
+                <form [formGroup]="forgetForm" (ngSubmit)="submitEmail()">
+                    <div class="mb-3 input-login d-flex flex-column">
+                        <label for="email">البريد الالكتروني</label>
+                        <input formControlName="identifier"  type="email"  id="email" placeholder="البريد الالكتروني">
+                    </div>
+                   
+
+                      <div class="btn-form mt-5 mb-3">
+                        <button  class="border-0"> ارسال رمز التأكيد</button>
+                      </div>
+                </form>
+                <div class=" d-flex justify-content-center mt-5">
+                    <span class="fw-bold me-2 text-secondary"> لدي حساب بالفعل، 
+                        <a routerLink="/login" class="a-color">
+                            تسجيل الدخول
+                        </a>
+                    </span>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+            <div class="log-img">
+                <img class="w-100" src="/imges/Rectangle forget.png" alt="img">
+            </div>
+
+        </div>
+    </div>
+</div>

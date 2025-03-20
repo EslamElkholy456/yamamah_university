@@ -1,0 +1,83 @@
+
+<div class="container-create my-5 d-flex flex-column align-items-center mx-auto">
+
+    <h2 class="p-5 m-auto text-center">انشاء كورس</h2>
+
+
+    <form class="" [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3 input-login d-flex flex-column">
+        <label>Title: </label>
+        <input type="text" formControlName="title"> 
+            
+      </div>
+      <div class="mb-3 input-login d-flex flex-column">
+        <label>Code: </label>
+        <input type="text" formControlName="code">   
+            
+      </div>
+      <div class="mb-3 input-login d-flex flex-column">
+        <label>Description:</label>
+        <textarea formControlName="description"></textarea>
+            
+      </div>
+      <div class="mb-3 input-login d-flex flex-column">
+        <label>Instructor: </label> 
+        <input type="text" formControlName="instructor"> 
+            
+      </div>
+      <div class="mb-3 input-login d-flex flex-column">
+                
+        <label>Price: </label>
+        <input type="number" formControlName="price">
+      </div>
+      <div class="mb-3 input-login d-flex flex-column">
+                
+        <label>Category: </label>
+        <input type="text" formControlName="category">
+      </div>
+      <div class="mb-3 input-login d-flex flex-column">
+                
+        <label>Credit Hours: </label>
+        <input type="number" formControlName="creditHours">
+      </div>
+      <button class="my-5" type="button" (click)="addModule()">Add Module</button> 
+        
+      
+        <div formArrayName="content">
+          <div *ngFor="let module of contentForms.controls; let i = index" [formGroupName]="i">
+            <div class="mb-3 input-login d-flex flex-column">
+                
+              <label>Module Title: </label>
+              <input type="text" formControlName="moduleTitle">
+            </div>
+            
+            <button class="my-5" type="button" (click)="addVideo(i)">Add Video</button>
+      
+            <div formArrayName="videos">
+              <div *ngFor="let video of getVideosForms(i).controls; let j = index" [formGroupName]="j">
+                <div class="mb-3 input-login d-flex flex-column">
+                  <label>Video Title: </label>
+                  <input type="text" formControlName="title">
+                  
+                </div>
+                <div class="mb-3 input-login d-flex flex-column">
+                  <label>Video URL: </label>
+                  <input type="text" formControlName="videoUrl">
+                  
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <button class="my-5" type="submit">Create Course</button>
+      </form>
+  
+</div>
+
+
+
+
+  

@@ -1,0 +1,69 @@
+<nav
+    class="navbar navbar-expand-sm "
+>
+    <div class="container">
+        <a class="navbar-brand" routerLink="/home">
+            <img src="/imges/new-lms-tight.png.png" alt="logo">
+        </a>
+        <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+           @if (isLogin()) {
+            <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link px-3" routerLinkActive="active-nav" routerLink="/home" aria-current="page"
+                        >الصفحة الرئيسية
+                        <span class="visually-hidden">(current)</span></a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" routerLinkActive="active-nav" routerLink="/courses" >الدورات</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" routerLinkActive="active-nav" routerLink="/teachers" >اعضاء هيئة التدريس</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" routerLinkActive="active-nav" routerLink="/levels" >الفصول الدراسية</a>
+                </li>
+               
+            </ul>
+
+            <button routerLink="contact" class="text-capitalize btn-start">تواصل معنا </button>
+           }
+
+           @if (!isLogin()) {
+            <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+                
+                
+                <li class="nav-item">
+                    <a class="nav-link px-3" routerLinkActive="active-nav" routerLink="/login" >Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3" routerLinkActive="active-nav" routerLink="/signup" > Sign Up</a>
+                </li>
+               
+            </ul>
+           }
+           @else {
+            
+                <div class=" me-5 pe-5">
+                    <!-- <i  class="fa-solid fs-5 fa-right-from-bracket text-uppercase "></i> -->
+                     <a (click)="logout()" class="fw-bold text-decoration-none text-danger" role="button">LogOut</a>
+                </div>
+            
+           }
+
+            
+            
+        </div>
+    </div>
+</nav>

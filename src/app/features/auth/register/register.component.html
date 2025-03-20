@@ -1,0 +1,172 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12 col-lg-8">
+            <div class="log-container">
+                <div class=" m-auto text-center">
+                    <h2>انشاء حساب جديد</h2>
+                </div>
+
+                
+
+                <form [formGroup]="register" (ngSubmit)="submitForm()">
+                  <div class="account">
+                    <span>نوع الحساب</span>
+                    <div class="d-flex">
+                        <div class="role text-center" (click)="selectAccountType('student')">طالب</div>
+                        <div class="role text-center" (click)="selectAccountType('instructor')">عضو هيئة تدريس</div>
+                        <div class="role text-center" (click)="selectAccountType('admin')">منظمة</div>
+                    </div>
+                </div>
+                    <div class="mb-3 input-login d-flex justify-content-between ">
+                        <div class=" name-input d-flex  flex-column">
+                          @let nameControl=register.get('firstName');
+                            <label for="firstName">الاسم الاول </label>
+                           
+                            <input formControlName="firstName" type="text"  id="firstName" placeholder="الاسم الاول ">
+                            @if (register.get('firstName')?.errors && register.get('firstName')?.touched) {
+                              <div class="alert alert-danger" role="alert">
+                                  @if (register.get('firstName')?.getError('required')) {
+                                    
+                                      firstName Is Required
+                                  }
+                                  @else if (nameControl?.getError('minlength')) {
+                                    minLength Is 3
+                                  }
+                                  @else if (nameControl?.getError('maxlength')) {
+                                    maxLength Is 20
+                                  }
+                                </div> 
+                          }
+                          </div>
+                        <div class="name-input d-flex   flex-column"> 
+                          @let lastNameControl=register.get('lastName');
+                            <label for="lastName">الاسم الاخير</label>
+                            <input formControlName="lastName" type="text"  id="lastName" placeholder="الاسم الاخير">
+                            @if (register.get('lastName')?.errors && register.get('lastName')?.touched) {
+                              <div class="alert alert-danger" role="alert">
+                                  @if (register.get('lastName')?.getError('required')) {
+                                    
+                                      lastName Is Required
+                                  }
+                                  @else if (lastNameControl?.getError('minlength')) {
+                                    minLength Is 3
+                                  }
+                                  @else if (lastNameControl?.getError('maxlength')) {
+                                    maxLength Is 20
+                                  }
+                                </div> 
+                          }
+                          </div>
+                        
+                      </div>
+                    <div class=" input-login ">
+                        <label for="phonenum" class="form-label fw-bold">رقم الجوال *</label>
+                        <input formControlName="phone" type="text" id="phonenum"  placeholder=" 0506410010" >
+
+                        <div class=" d-flex  m-0 p-0">
+                            <!-- <button class="btn border-0 btn-outline-secondary p-0 btn-drop dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/imges/Vector (8).png" alt="flag" class="me-2" >
+                                
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li>
+                                </li>
+                              </ul> -->
+                        </div>
+                                                
+                      </div>
+
+                    <div class="mb-3 input-login d-flex flex-column">
+                        <label for="email">البريد الالكتروني</label>
+                        <input formControlName="email" type="email"  id="email" placeholder="البريد الالكتروني">
+                      </div>
+                      @if (register.get('email')?.errors && register.get('email')?.touched) {
+                        <div class="alert alert-danger" role="alert">
+                            @if (register.get('email')?.getError('required')) {
+                                Email Is Required
+                            }
+                            @if (register.get('email')?.getError('email')) {
+                                Email Is Invalid
+                            }
+                          </div> 
+                    }
+                    <div class="mb-3 input-login d-flex flex-column">
+                        <label for="pass"> كلمة المرور</label>
+                        <input formControlName="password" type="password"  id="pass" placeholder="كلمة المرور">
+                      </div>
+                      @if (register.get('password')?.errors && register.get('password')?.touched) {
+                        <div class="alert alert-danger" role="alert">
+                            @if (register.get('password')?.getError('required')) {
+                                password Is Required
+                            }
+                            @if (register.get('password')?.getError('password')) {
+                                password Is Invalid
+                            }
+                          </div> 
+                    }
+                    <!-- <div class="mb-3 input-login d-flex flex-column">
+                        <label for="repass"> تأكيد كلمة المرور </label>
+                        <input type="password"  id="repass" placeholder="كلمة المرور">
+                      </div> -->
+                      <div class=" input-login ">
+                        <label for="time" class="form-label fw-bold">المنطقة الزمنية</label>
+
+                        <div class=" d-flex  m-0 p-0">
+                            <button class="btn drop-menu border-0 btn-outline-secondary p-0 btn-drop dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                
+                                
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li value="Asia/Riyadh">آسيا / الرياض</li>
+                                <li value="Asia/Dubai">آسيا / دبي</li>
+                                <li value="Africa/Cairo">إفريقيا / القاهرة</li>
+                              </ul>
+                              <input formControlName="timezone"  type="text" id="time" class="input-drop-2" placeholder=" آسيا/ الرياض" >
+                        </div>
+                        @if (register.get('timezone')?.errors && register.get('timezone')?.touched) {
+                          <div class="alert alert-danger" role="alert">
+                              @if (register.get('timezone')?.getError('required')) {
+                                  timezone Is Required
+                              }
+                             
+                            </div> 
+                      }
+                                                
+                      </div>
+
+
+                      <div class="d-flex justify-content-between pass">
+                        <div class="">
+                            <input class="check" type="checkbox">
+                            <span class="fw-bold me-2">انا اوافق على
+                                <a class="a-color">
+                                    الشروط والاحكام
+                                </a>
+                            </span>
+                        </div>
+                        
+                      </div>
+
+                      <div class="btn-form mt-5 mb-3">
+                        <button type="submit" class="border-0">تسجيل</button>
+                      </div>
+
+                     
+                </form>
+                <div class=" d-flex justify-content-center mt-5">
+                    <span class="fw-bold me-2 text-secondary"> لدي حساب بالفعل، 
+                        <a routerLink="/login" class="a-color">
+                            تسجيل الدخول
+                        </a>
+                    </span>
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+            <div class="log-img">
+                <img class="w-100" src="/imges/Rectangle register.png" alt="img">
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<section class="mt-5">
+    @for (level of levelNum; track level._id) {
+        <div [ngClass]="{ 'active':level.isVisible }" (click)="getLevelById(level._id)" (click)=" toggleContent(level)" class="levels d-flex flex-column align-items-end ">
+            <h3>{{ level.name }}</h3>
+            <span>Pre-Requisite  Courses {{ level.prerequisiteCoursesCount }}</span>
+        </div>
+    
+        <div *ngIf="level.isVisible" class="container-categories mx-auto">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="categories d-flex align-items-center justify-content-center">
+                        <h4 class="text-center">Type of requirements</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="categories d-flex align-items-center justify-content-center">
+                        <h4 class="text-center">Credit
+                            Hours</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="categories d-flex align-items-center justify-content-center">
+                        <h4 class="text-center">Pre-Requisite
+                            Courses</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="categories d-flex align-items-center justify-content-center">
+                        <h4 class="text-center">Required
+                            or Elective</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="categories d-flex align-items-center justify-content-center">
+                        <h4 class="text-center">Course Title</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2">
+                    <div class="categories d-flex align-items-center justify-content-center">
+                        <h4 class="text-center">Course Code College</h4>
+                    </div>
+                </div>
+            </div>
+            @for (content of levelContent; track content._id) {
+            <div class="row mb-5">
+              
+                <div class="col-sm-6 col-md-3 col-lg-2 mt-4">
+                    <div class="types d-flex align-items-center justify-content-center">
+                        <h5 class="text-center">{{ content.requirementType  }}</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2 mt-4">
+                    <div class="types d-flex align-items-center justify-content-center">
+                        <h5 class="text-center">{{ content.creditHours }}</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2 mt-4">
+                    <div class="types d-flex align-items-center justify-content-center">
+                        <h5 class="text-center">Type of requirements</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2 mt-4">
+                    <div class="types d-flex align-items-center justify-content-center">
+                        <h5 class="text-center">{{ content.courseType }}</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2 mt-4">
+                    <div class="types d-flex align-items-center justify-content-center">
+                        <h5 class="text-center">{{ content.title }}</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-2 mt-4">
+                    <div class="types d-flex align-items-center justify-content-center">
+                        <h5 class="text-center">{{ content.code }}</h5>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+        </div>
+    }
+   
+
+
+</section>

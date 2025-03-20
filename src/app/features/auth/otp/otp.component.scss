@@ -1,0 +1,36 @@
+.log-img{
+    
+    img{
+        border-radius: 20px;
+        height: 705px;
+    }
+}
+.log-container{
+    height: 705px;
+    background-color: #E7EDF7;
+    padding: 36px;
+    border-radius: 20px;
+
+    h2{
+        color: #233757;
+        font-size: 36px;
+        font-weight: 700;
+        
+    }
+}
+
+.otp-input {
+    width: 787px;
+    // height: 60px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.otp-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

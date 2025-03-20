@@ -1,0 +1,39 @@
+.teacher-card{
+    // width: 263px;
+    height: 482px;
+    border-radius: 20px;
+    padding: 16px;
+    // margin: 32px;
+    box-shadow: 2px 2px 7px 0px #00000012;
+
+    span{
+        color: #9BB7DE;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .content{
+        h5{
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 24px;
+            color: #253F67;
+
+        }
+        span{
+            color: #454545;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        p{
+            color: #454545;
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+}
+img{
+    border-radius: 10px;
+}

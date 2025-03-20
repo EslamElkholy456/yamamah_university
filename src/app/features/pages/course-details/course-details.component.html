@@ -1,0 +1,43 @@
+<div  class="container-details my-5 mx-auto">
+    <div class=" p-5 ">
+        <h2>{{ courseDetails.title }}</h2>
+        <p>{{ courseDetails.description }}</p>
+    </div>
+
+    <div class="content p-5">
+        <h3 class="text-center d-flex justify-content-center my-5">Course Content</h3>
+        <div class="d-flex justify-content-between">
+            <div class="cont-style d-flex justify-content-center align-items-center">
+                <span class="fw-bold" >Code: {{ courseDetails.code }}</span>
+            </div>
+            <div class="cont-style d-flex justify-content-center align-items-center">
+                <span class="fw-bold">Credit Hours: {{ courseDetails.creditHours }}</span>
+            </div>
+            <div class="cont-style d-flex justify-content-center align-items-center">
+                <span class="fw-bold">Type: {{ courseDetails.courseType }}</span>
+            </div>
+            <div class="cont-style d-flex justify-content-center align-items-center">
+                <span class="fw-bold text-center">Requirement: {{ courseDetails.requirementType }}</span>
+            </div>
+            
+            
+            
+           
+            
+        </div>
+        <div class="d-flex justify-content-evenly align-items-center   mt-5 p-5">
+            
+                
+                <span class="cont-style-2 text-center   fw-bold "><i class="fa-solid fa-star "></i> Rating:  {{ courseDetails.rating }} </span>
+            
+            
+               <span class="cont-style-2 d-flex justify-content-center align-items-center fw-bold">Price:{{ courseDetails.price }}</span>
+           
+        </div>
+
+        <button>شراء الان</button>
+    </div>
+
+   
+    
+</div>
