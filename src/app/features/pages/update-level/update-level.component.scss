@@ -1,16 +1,3 @@
-.container-create{
-    width: 1122px;
-    background-color: #CAD8ED;
-    border-radius: 20px;
-    box-shadow: 14px 10px 17px 17px #00000012;
-}
-
-h2{
-    font-size: 36px;
-    font-weight: 700;
-    padding: 10px;
-    color: #253F67;
-}
 textarea{
     width: 787px;
     height: 176px;
@@ -23,11 +10,17 @@ textarea{
 }
 
 button{
+    
     width: 243px;
     border-radius: 5px;
     padding: 8px 67px;
     background-color: #253F67;
     color: white;
     box-shadow: 0px 3px 6px 0px #40D57D4D;
+}
 
+.container-update{
+    width: 1220px;
+    background-color: #E7E7E7;
+    border-radius: 20px;
 }

@@ -21,9 +21,7 @@ export class UsersService {
   getAllFacCount():Observable<any>{
     return this._HttpClient.get(`http://38.242.207.46/api/v1/users/faculty/count`)
   }
- getAllInstructors():Observable<any>{
-  return this._HttpClient.get('http://38.242.207.46/api/v1/users/instructors')
- }
+ 
 
 
 

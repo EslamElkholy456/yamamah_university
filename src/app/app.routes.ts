@@ -14,6 +14,9 @@ import { loggedGuard } from './core/guards/logged.guard';
 import { authGuard } from './core/guards/auth.guard';
 import { CourseDetailsComponent } from './features/pages/course-details/course-details.component';
 import { CreateCourseComponent } from './features/pages/create-course/create-course.component';
+import { UpdateCourseComponent } from './features/pages/update-course/update-course.component';
+import { CreateLevelComponent } from './features/pages/create-level/create-level.component';
+import { UpdateLevelComponent } from './features/pages/update-level/update-level.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'home',pathMatch:'full'},
@@ -38,8 +41,11 @@ export const routes: Routes = [
             {path:'teachers',component:TeachersComponent,title:'Teachers'},
             {path:'levels',component:LevelsComponent,title:'Levels'},
             {path:'contact',component:ContactComponent,title:'Contact Us'},
-            {path:'courseDetails/:id',component:CourseDetailsComponent,title:'CourseDetails'},
+            {path:'courseDetails/:id',component:CourseDetailsComponent,data:{ renderMode: 'no-prerender' },title:'CourseDetails'},
             {path:'creatCourse',component:CreateCourseComponent,title:'CreateCourse'},
+            {path:'updateCourse',component:UpdateCourseComponent,title:'updateCourse'},
+            {path:'createLevel',component:CreateLevelComponent,title:'createLevel'},
+            {path:'updateLevel',component:UpdateLevelComponent,title:'updateLevel'},
         ]
     },
     {path:'**',redirectTo:'/home'}

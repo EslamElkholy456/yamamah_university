@@ -1,5 +1,6 @@
 
 export interface Icourse {
+imageUrl: any;
   _id: string;
   title: string;
   code: string;
@@ -16,6 +17,7 @@ export interface Icourse {
   courseType: string;
   prerequisites: string[];
   requirementType: string;
+  
 }
 
 export interface Content {

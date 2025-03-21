@@ -21,8 +21,8 @@
             
       </div>
       <div class="mb-3 input-login d-flex flex-column">
-        <label>Instructor: </label> 
-        <input type="text" formControlName="instructor"> 
+        <label>image Url: </label> 
+        <input type="text" formControlName="imageUrl"> 
             
       </div>
       <div class="mb-3 input-login d-flex flex-column">
@@ -30,11 +30,11 @@
         <label>Price: </label>
         <input type="number" formControlName="price">
       </div>
-      <div class="mb-3 input-login d-flex flex-column">
+      <!-- <div class="mb-3 input-login d-flex flex-column">
                 
         <label>Category: </label>
         <input type="text" formControlName="category">
-      </div>
+      </div> -->
       <div class="mb-3 input-login d-flex flex-column">
                 
         <label>Credit Hours: </label>
@@ -72,8 +72,16 @@
           </div>
         </div>
       
-        <button class="my-5" type="submit">Create Course</button>
-      </form>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <button class="my-5" type="submit">Create Course</button>
+        
+          <a type="button" (click)="back()" class="px-4 py-2 rounded text-white bg-secondary text-decoration-none " >Back</a>
+       
+        </div>
+       
+        </form>
+      
   
 </div>
 

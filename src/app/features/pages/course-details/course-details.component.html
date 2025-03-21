@@ -1,8 +1,23 @@
 <div  class="container-details my-5 mx-auto">
-    <div class=" p-5 ">
+    <div class=" p-5 d-flex justify-content-between align-items-center ">
+      <div class="">
         <h2>{{ courseDetails.title }}</h2>
         <p>{{ courseDetails.description }}</p>
+      </div>
+      @if (userRole==="admin" ||userRole==="instructor") {
+        <a (click)="editCourse()" type="button" class="p-2 m-4 rounded text-white bg-secondary text-decoration-none ">تعديل</a>
+        <a (click)="delete(courseId)" type="button" class="p-2 rounded text-white bg-danger text-decoration-none ">حذف</a>
+
+      }
+       
+      
+
     </div>
+
+    <div class="imge px-5">
+        <img class="w-100 rounded mx-auto" [src]="courseDetails.imageUrl" alt="">
+    </div>
+   
 
     <div class="content p-5">
         <h3 class="text-center d-flex justify-content-center my-5">Course Content</h3>

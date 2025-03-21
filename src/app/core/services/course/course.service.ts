@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Icourse } from '../../../shared/interfaces/icourse';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,14 @@ export class CourseService {
 
   searchByName():Observable<any>{
     return this._HttpClient.get(`http://38.242.207.46/api/v1/courses/search/`)
+  }
+
+
+putUpdateCourse(id:string,course:Icourse):Observable<any>{
+  return this._HttpClient.put(`http://38.242.207.46/api/v1/courses/${id}`,course)
+}
+
+  deleteCourse(id:string):Observable<any>{
+    return this._HttpClient.delete(`http://38.242.207.46/api/v1/courses/${id}`)
   }
 }

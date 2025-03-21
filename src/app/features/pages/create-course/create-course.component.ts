@@ -1,4 +1,4 @@
-import { FormArray, FormBuilder, FormControl, FormControlName, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { CourseService } from '../../../core/services/course/course.service';
@@ -30,12 +30,13 @@ private readonly router=inject(Router)
     this.courseForm = this.fb.group({
       title: ['', Validators.required],
       code: ['', Validators.required],
+      imageUrl: ['', Validators.required],
       description: ['', Validators.required],
-      instructor: ['', Validators.required],
+      instructor: ['65adcd2e5f7c8e001fc4b123'],
       price: [0, Validators.required],
       studentsEnrolled: [0],
       content: this.fb.array([]),
-      category: ['', Validators.required],
+      category: ['65adcd5e9f8a2c001fc4b456'],
       reviews: this.fb.array([]),
       rating: [0],
       isPublished: [true],
@@ -88,5 +89,9 @@ private readonly router=inject(Router)
         }
       );
     }
+  }
+
+  back():void{
+    this.router.navigate(['/home'])
   }
 }

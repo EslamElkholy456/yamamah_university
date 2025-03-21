@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { UsersService } from '../../../core/services/users/users.service';
+
 import { Itech } from '../../../shared/interfaces/itech';
 import { NgFor } from '@angular/common';
+import { InstructorsService } from '../../../core/services/instructors/instructors.service';
 
 @Component({
   selector: 'app-teachers',
@@ -11,28 +12,43 @@ import { NgFor } from '@angular/common';
 })
 export class TeachersComponent implements OnInit {
 
-  private readonly usersService=inject(UsersService)
+  private readonly instructorsService=inject(InstructorsService)
 
-  tech:Itech[]=[]
+  techear:Itech[]=[]
 //   currentPage:any=1
 // totalPages:any
 
   ngOnInit(): void {
-    this.showInstructors()
+   this.instructors()
   }
 
 
-  showInstructors():void{
-   this.usersService.getAllInstructors().subscribe({
-    next:(res)=>{
-      console.log(res);
-      this.tech=res
-      
-    },error:(err)=>{
-      console.log(err);
-      
-    }
-   })
+  instructors():void{
+    this.instructorsService.getInstructors().subscribe({
+      next: (res) => {
+        this.techear = res.users 
+        console.log(this.techear);
+        
+      },
+      error: (err) => {
+        console.log(err);
+        
+      }
+    });
+
   }
+
+  // showInstructors():void{
+  //  this.usersService.getAllInstructors().subscribe({
+  //   next:(res)=>{
+  //     console.log(res);
+  //     this.tech=res
+      
+  //   },error:(err)=>{
+  //     console.log(err);
+      
+  //   }
+  //  })
+  // }
 
 }

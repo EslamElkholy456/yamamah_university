@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotFoundComponent } from './not-found.component';
+import { UpdateLevelComponent } from './update-level.component';
 
-describe('NotFoundComponent', () => {
-  let component: NotFoundComponent;
-  let fixture: ComponentFixture<NotFoundComponent>;
+describe('UpdateLevelComponent', () => {
+  let component: UpdateLevelComponent;
+  let fixture: ComponentFixture<UpdateLevelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NotFoundComponent]
+      imports: [UpdateLevelComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NotFoundComponent);
+    fixture = TestBed.createComponent(UpdateLevelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

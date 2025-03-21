@@ -1,7 +1,11 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpInterceptorFn } from '@angular/common/http';
+import { inject, PLATFORM_ID } from '@angular/core';
 
 export const headersInterceptor: HttpInterceptorFn = (req, next) => {
 
+  const pLATFORM_ID=inject(PLATFORM_ID)
+if(isPlatformBrowser(pLATFORM_ID)){
   if (localStorage.getItem('token')) {
     req=req.clone({
       setHeaders:{
@@ -9,5 +13,7 @@ export const headersInterceptor: HttpInterceptorFn = (req, next) => {
       }
     })
   }
-  return next(req);
+  
+}
+return next(req);
 };

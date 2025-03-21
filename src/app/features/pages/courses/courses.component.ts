@@ -1,14 +1,16 @@
-import { NgFor } from '@angular/common';
+
 import { Icourse } from '../../../shared/interfaces/icourse';
 import { CourseService } from './../../../core/services/course/course.service';
 import { Component, inject, OnInit } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { SearchPipe } from '../../../shared/pipes/search.pipe';
+
 
 
 @Component({
   selector: 'app-courses',
-  imports: [FormsModule,RouterLink,ReactiveFormsModule],
+  imports: [FormsModule,RouterLink,ReactiveFormsModule,SearchPipe],
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss'
 })
@@ -19,6 +21,10 @@ courseContent:Icourse[]=[]
 
 currentPage:any=1
 totalPages:any
+
+coursesSearch:string=''
+userToken: any;
+  userRole: string | undefined;
 
 
 
@@ -66,5 +72,7 @@ getSearch():void{
     }
   })
 }
+
+
 
 }

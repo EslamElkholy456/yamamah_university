@@ -2,17 +2,17 @@
     <div class="row">
         <div class="col-md-12 col-lg-9">
             <div class="row">
-                <div class="search-feild">
+                <div class="search-feild my-4">
     
-                    <input type="text" class=" border-0 mt-5 fs-5" placeholder="البحث في المتجر">
+                    <input type="text" [(ngModel)]="coursesSearch" class=" border-0 mt-5 fs-5" placeholder="البحث في المتجر">
                     <button (click)="getSearch()" class="border-0">بحث</button>
                 </div>
                     
-                @for (course of courseContent; track $index) {
+                @for (course of courseContent|search:coursesSearch; track $index) {
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div [routerLink]="['/courseDetails',course._id]" class="courses-card">
                             <div class="">
-                                <img class="w-100 " src="/imges/home/sherlock_holmes_ebook.jpg.png" alt="course">
+                                <img class="w-100 " [src]="course.imageUrl" alt="course">
                             </div>
                             <div class="contain">
                                 <div class="my-3">

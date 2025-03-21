@@ -1,20 +1,22 @@
 <div class="container">
     <div class="row">
-        @for (teacher of tech; track $index) {
+       @for (inst of techear; track $index) {
             <div class="col-sm-12 col-md-6 col-lg-3 my-4">
                 <div class="teacher-card">
                     <div class="">
                         <img class="w-100" src="/imges/download12.jpg" alt="teacher">
                     </div>
-                    <span class="">{{ teacher.message }}</span>
+                    <span class="mt-4">{{ inst.role }}</span>
                     <div class="content mt-3">
-                        <h5 *ngFor="let item of teacher.users">{{ item.firstName }} {{ item.lastName }}</h5>
-                        <span *ngFor="let item of teacher.users">{{ item.role }}</span>
-                        <p *ngFor="let item of teacher.users" class="mt-4"> (as per Saudi university ranking)</p>
+                        <h5 >{{ inst.firstName }} {{ inst.lastName }}</h5>
+                        <span ></span>
+                        <p  class="mt-4"> (as per Saudi university ranking)</p>
                     </div>
                 </div>
             </div>
-        }
+       }
+            
+       
         
         
     </div>

@@ -1,0 +1,38 @@
+<div  class="container-update mx-auto p-5 my-3">
+    <div class="d-flex justify-content-end">
+        <a (click)="delete(levelId)" type="button" class="p-2 rounded text-white bg-danger text-decoration-none ">حذف المستوي</a>
+    </div>
+<form [formGroup]="levelForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3 input-login d-flex flex-column">
+      <label for="name">الاسم:</label>
+      <input type="text" id="name" formControlName="name" class="form-control">
+    </div>
+  
+    <div class="mb-3 input-login d-flex flex-column">
+      <label for="order">الترتيب:</label>
+      <input type="number" id="order" formControlName="order" class="form-control">
+    </div>
+  
+    <div class="mb-3 input-login d-flex flex-column">
+      <label for="isPublished">منشور:</label>
+      <input type="checkbox" id="isPublished" formControlName="isPublished" class="form-check-input">
+    </div>
+  
+    <div class="mb-3 input-login d-flex flex-column">
+      <label for="prerequisiteCoursesCount">عدد الدورات المتطلبة:</label>
+      <input type="number" id="prerequisiteCoursesCount" formControlName="prerequisiteCoursesCount" class="form-control">
+    </div>
+  
+    <div formArrayName="courses">
+      <label>الدورات:</label>
+      <div *ngFor="let course of coursesFormArray.controls; let i = index" class="mb-3 input-login d-flex flex-column">
+        <input type="text" [formControlName]="i" class="form-control">
+        <button type="button" (click)="removeCourse(i)" class="btn btn-danger">حذف</button>
+      </div>
+      <button type="button" (click)="addCourse()" class="my-5">إضافة دورة</button>
+    </div>
+  
+    <button type="submit" [disabled]="!levelForm.valid" class="my-5">حفظ</button>
+  </form>
+</div>
+
