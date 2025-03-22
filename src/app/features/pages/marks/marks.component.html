@@ -1,0 +1,29 @@
+<div class="container-mark my-5 d-flex flex-column align-items-center mx-auto">
+    <h2 class="p-5 m-auto text-center">اضافه تقييم</h2>
+
+    <form [formGroup]="markForm" (ngSubmit)="addMark()" >
+        <div class="mb-3 input-login d-flex flex-column">
+            <label>User Id: </label>
+            <input type="text" formControlName="userId"> 
+                
+          </div>
+        <div class="mb-3 input-login d-flex flex-column">
+            <label>Course Id: </label>
+            <input type="text" formControlName="courseId"> 
+                
+          </div>
+        <div class="mb-3 input-login d-flex flex-column">
+            <label>Score: </label>
+            <input type="number" formControlName="score"> 
+                
+          </div>
+        <div class="mb-3 input-login d-flex flex-column">
+            <label>Official Score: </label>
+            <input type="number" formControlName="officialScore"> 
+                
+          </div>
+
+
+          <button class="my-5" type="submit">تأكيد</button>
+    </form>
+</div>

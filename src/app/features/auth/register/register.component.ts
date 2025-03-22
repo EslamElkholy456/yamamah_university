@@ -3,15 +3,16 @@ import {ReactiveFormsModule,FormGroup, FormControl, Validators, AbstractControl,
 import { AuthService } from '../../../core/services/auth/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule,RouterLink,NgClass],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
-  
+  selectedRole: string = '';  
 
     register:FormGroup=new FormGroup({
       role:new FormControl(null,[Validators.required]), // تخزين نوع الحساب
@@ -39,6 +40,7 @@ private readonly toaster=inject(ToastrService)
 selectAccountType(type: string) {
   this.register.patchValue({ role: type });
   console.log('القيمة المختارة:', this.register.value);
+  this.selectedRole = type;
 }
 
 submitForm():void{

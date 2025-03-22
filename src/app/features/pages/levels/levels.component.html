@@ -1,7 +1,7 @@
 <section class="mt-5">
     @for (level of levelNum; track level._id) {
         <div [ngClass]="{ 'active':level.isVisible }" (click)="getLevelById(level._id)" (click)=" toggleContent(level)" class="levels d-flex justify-content-between ">
-            @if (userRole==="admin" ||userRole==="instructor") {
+            @if (userRole==="admin" ||userRole==="faculty") {
                 <a (click)="editLevel()" type="button" class="p-2 m-4 rounded text-white bg-secondary text-decoration-none ">تعديل المستوي</a>
 
               }
@@ -90,7 +90,10 @@
         </div>
     }
     <div class="container d-flex justify-content-center my-5">
-        <button routerLink="/createLevel" class="border-0 mx-auto">Create Level</button>
+        @if (userRole==="admin" ||userRole==="faculty") {
+            <button routerLink="/createLevel" class="border-0 mx-auto">Create Level</button>
+
+        }
     </div>
    
 

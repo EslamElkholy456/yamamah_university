@@ -28,4 +28,12 @@ export class UsersService {
   postContact(data:object):Observable<any>{
     return this._HttpClient.post(`http://38.242.207.46/api/v1/contact/`,data)
   }
+
+  getUserById(id:string):Observable<any>{
+    return this._HttpClient.get(`http://38.242.207.46/api/v1/users/byId/${id}`)
+  }
+
+  deleteUserById(id:string):Observable<any>{
+    return this._HttpClient.delete(`http://38.242.207.46/api/v1/users/delete/${id}`)
+  }
 }

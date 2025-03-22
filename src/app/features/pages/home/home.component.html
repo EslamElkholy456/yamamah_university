@@ -41,14 +41,15 @@
                     </div>
                 </div>
             </div>
-            @if (userRole==="admin" ||userRole==="instructor") {
+            @if (userRole==="admin" ||userRole==="faculty") {
                 <div class="col-md-6 col-lg-3">
                     <div class="first-card d-flex align-items-center flex-column">
                         <img src="/imges/home/Background.png" alt="">
                         
                        
                        
-                            <button routerLink="/creatCourse" class="my-5 ">انشاء كورس</button>
+                            <button routerLink="/creatCourse" class="my-2 ">انشاء كورس</button>
+                            <button routerLink="/marks" class=" "> اضافه تقييم</button>
                         
                     </div>
                 </div>

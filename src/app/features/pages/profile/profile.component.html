@@ -1,0 +1,38 @@
+<div class="container-profile mx-auto p-5 my-4">
+    <h2 class="mx-auto text-center">الملف الشخصي</h2>
+    <div class="mt-5 py-5 d-flex flex-column align-items-end">
+        <h3>Name: {{ profile.firstName }} {{ profile.lastName }}</h3>
+        <h3>Id: {{ profile._id }}</h3>
+        <h3>Role: {{ profile.role }}</h3>
+
+    </div>
+    <div class="marks">
+        <h3 class="mx-auto text-center">التقييمات</h3>
+        @for (stmark of mark; track $index) {
+            <div class="course  py-4 bg-white rounded-2 px-2 my-3 ">
+               <div class="row mb-3">
+                <div  class="col-4"><span>الكورس:{{ stmark.course.title}}</span></div>
+                <div class="col-4"> <span>الساعات: {{ stmark.creditHours }}</span></div>
+                <div class="col-4"><span>التقييم: {{ stmark.grade }}</span></div>
+               </div>
+               <div class="row">
+                <div class="col-4">
+                    <span>الدرجه: {{ stmark.score }}</span>
+                </div>
+                <div class="col-4">
+                    <span>الدرجه العظمي:  {{ stmark.officialScore }}</span>
+                </div>
+                <div class="col-4">
+                    <span>الحاله:{{ stmark.status }}</span>
+                </div>
+                
+               </div>
+    
+            </div>
+        }
+    </div>
+
+    <div class="mt-auto ">
+        <button (click)="deleteUser(profile._id)" class="bg-danger text-white p-2 rounded border-0">حذف الحساب</button>
+    </div>
+</div>

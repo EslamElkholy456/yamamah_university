@@ -4,7 +4,7 @@
         <h2>{{ courseDetails.title }}</h2>
         <p>{{ courseDetails.description }}</p>
       </div>
-      @if (userRole==="admin" ||userRole==="instructor") {
+      @if (userRole==="admin" ||userRole==="faculty") {
         <a (click)="editCourse()" type="button" class="p-2 m-4 rounded text-white bg-secondary text-decoration-none ">تعديل</a>
         <a (click)="delete(courseId)" type="button" class="p-2 rounded text-white bg-danger text-decoration-none ">حذف</a>
 

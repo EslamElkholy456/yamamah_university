@@ -17,6 +17,8 @@ import { CreateCourseComponent } from './features/pages/create-course/create-cou
 import { UpdateCourseComponent } from './features/pages/update-course/update-course.component';
 import { CreateLevelComponent } from './features/pages/create-level/create-level.component';
 import { UpdateLevelComponent } from './features/pages/update-level/update-level.component';
+import { ProfileComponent } from './features/pages/profile/profile.component';
+import { MarksComponent } from './features/pages/marks/marks.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'home',pathMatch:'full'},
@@ -46,6 +48,8 @@ export const routes: Routes = [
             {path:'updateCourse',component:UpdateCourseComponent,title:'updateCourse'},
             {path:'createLevel',component:CreateLevelComponent,title:'createLevel'},
             {path:'updateLevel',component:UpdateLevelComponent,title:'updateLevel'},
+            {path:'profile',component:ProfileComponent,title:'profile'},
+            {path:'marks',component:MarksComponent,title:'addMarks'},
         ]
     },
     {path:'**',redirectTo:'/home'}

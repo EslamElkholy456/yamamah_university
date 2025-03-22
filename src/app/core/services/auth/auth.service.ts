@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   userToken:any;
   userRole: string | undefined;
+  userId:any
   constructor(private _HttpClient:HttpClient) { }
 
 private readonly router=inject(Router)
@@ -26,6 +27,7 @@ private readonly router=inject(Router)
     this.userToken=jwtDecode(localStorage.getItem('token')!)
     console.log(this.userToken);
     this.userRole=this.userToken.role
+    this.userId=this.userToken.userId
     console.log(this.userRole);
   }
 

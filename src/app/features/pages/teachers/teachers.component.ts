@@ -3,10 +3,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Itech } from '../../../shared/interfaces/itech';
 import { NgFor } from '@angular/common';
 import { InstructorsService } from '../../../core/services/instructors/instructors.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-teachers',
-  imports: [NgFor],
+  imports: [NgFor,ReactiveFormsModule],
   templateUrl: './teachers.component.html',
   styleUrl: './teachers.component.scss'
 })

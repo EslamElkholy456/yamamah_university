@@ -12,9 +12,9 @@
                   <div class="account">
                     <span>نوع الحساب</span>
                     <div class="d-flex">
-                        <div class="role text-center" (click)="selectAccountType('student')">طالب</div>
-                        <div class="role text-center" (click)="selectAccountType('instructor')">عضو هيئة تدريس</div>
-                        <div class="role text-center" (click)="selectAccountType('admin')">منظمة</div>
+                        <div class="role text-center"  [ngClass]="{'active': selectedRole === 'student'}" (click)="selectAccountType('student')">طالب</div>
+                        <div class="role text-center" [ngClass]="{'active': selectedRole === 'faculty'}" (click)="selectAccountType('faculty')">عضو هيئة تدريس</div>
+                        <div class="role text-center"  [ngClass]="{'active': selectedRole === 'admin'}" (click)="selectAccountType('admin')">منظمة</div>
                     </div>
                 </div>
                     <div class="mb-3 input-login d-flex justify-content-between ">
@@ -94,7 +94,7 @@
                         <label for="pass"> كلمة المرور</label>
                         <input formControlName="password" type="password"  id="pass" placeholder="كلمة المرور">
                       </div>
-                      @if (register.get('password')?.errors && register.get('password')?.touched) {
+                      <!-- @if (register.get('password')?.errors && register.get('password')?.touched) {
                         <div class="alert alert-danger" role="alert">
                             @if (register.get('password')?.getError('required')) {
                                 password Is Required
@@ -103,7 +103,7 @@
                                 password Is Invalid
                             }
                           </div> 
-                    }
+                    } -->
                     <!-- <div class="mb-3 input-login d-flex flex-column">
                         <label for="repass"> تأكيد كلمة المرور </label>
                         <input type="password"  id="repass" placeholder="كلمة المرور">
